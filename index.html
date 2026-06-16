@@ -3,780 +3,535 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
-  <title>RAKSI — Crafted for Everyday Excellence</title>
-  <meta name="description" content="RAKSI menghadirkan dompet pria premium berkualitas tinggi dengan desain elegan dan material terbaik. Temukan koleksi dompet kulit, card holder, dan aksesori premium." />
-  <meta name="keywords" content="dompet pria premium, dompet kulit, card holder, dompet minimalis, RAKSI, dompet elegan" />
-  <meta name="author" content="RAKSI" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="RAKSI — Crafted for Everyday Excellence" />
-  <meta property="og:description" content="Dompet pria premium dengan desain elegan dan material berkualitas tinggi." />
-  <meta property="og:url" content="https://raksi.id" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1200" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="RAKSI — Crafted for Everyday Excellence" />
-  <meta name="twitter:description" content="Dompet pria premium dengan desain elegan dan material berkualitas tinggi." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1200" />
-
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "RAKSI",
-    "url": "https://raksi.id",
-    "logo": "https://raksi.id/logo.png",
-    "description": "Brand dompet pria premium Indonesia",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+62-812-3456-7890",
-      "contactType": "customer service",
-      "availableLanguage": "Indonesian"
-    },
-    "sameAs": [
-      "https://instagram.com/raksi.id",
-      "https://shopee.co.id/raksi"
-    ]
-  }
-  </script>
-
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Koperasi Sarimanah - Bersama Membangun Kesejahteraan Anggota dan Masyarakat. Layanan simpan pinjam terpercaya sejak 2003." />
+  <meta name="keywords" content="koperasi, sarimanah, simpan pinjam, anggota, koperasi desa" />
+  <meta property="og:title" content="Koperasi Sarimanah" />
+  <meta property="og:description" content="Bersama Membangun Kesejahteraan Anggota dan Masyarakat" />
+  <title>Koperasi Sarimanah – Bersama Membangun Kesejahteraan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="loading">
 
-  <!-- ============================================================
-       NAVBAR
-  ============================================================ -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">RAKSI</a>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#collection" class="nav-link">Collection</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#reviews" class="nav-link">Reviews</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li>
-          <a href="https://shopee.co.id/" target="_blank" class="nav-cta">Belanja Sekarang</a>
-        </li>
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <i class="fas fa-handshake"></i>
+      </div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p>Memuat Halaman...</p>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <i class="fas fa-handshake"></i>
+        <span>Koperasi <strong>Sarimanah</strong></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#visi-misi">Visi Misi</a></li>
+        <li><a href="#struktur">Struktur</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#keanggotaan">Keanggotaan</a></li>
+        <li><a href="#pinjaman">Pinjaman</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontak">Kontak</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <button id="darkModeToggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+        <button id="hamburger" aria-label="Menu" class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- ============================================================
-       HERO
-  ============================================================ -->
-  <section class="hero" id="home">
+  <!-- HERO -->
+  <section id="hero">
     <div class="hero-bg">
-      <img
-        src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1920&q=80"
-        alt="RAKSI Premium Wallet"
-        class="hero-img"
-        loading="eager"
-      />
-      <div class="hero-overlay"></div>
+      <div class="hero-shape s1"></div>
+      <div class="hero-shape s2"></div>
+      <div class="hero-shape s3"></div>
     </div>
-    <div class="hero-content">
-      <span class="hero-eyebrow reveal">Crafted for Everyday Excellence</span>
-      <h1 class="hero-title reveal reveal-delay-1">
-        Dompet Premium<br />untuk Gaya Hidup<br />Modern
-      </h1>
-      <p class="hero-sub reveal reveal-delay-2">
-        Dirancang dengan material berkualitas dan desain elegan<br />untuk menemani aktivitas Anda setiap hari.
-      </p>
-      <div class="hero-actions reveal reveal-delay-3">
-        <a href="#collection" class="btn btn-primary">Lihat Koleksi</a>
-        <a href="https://shopee.co.id/" target="_blank" class="btn btn-secondary">Beli di Shopee</a>
+    <div class="container hero-content">
+      <div class="hero-text animate-up">
+        <span class="hero-badge"><i class="fas fa-star"></i> Terpercaya Sejak 2003</span>
+        <h1>Koperasi<br /><span class="gradient-text">Sarimanah</span></h1>
+        <p class="hero-tagline">Bersama Membangun Kesejahteraan<br />Anggota dan Masyarakat</p>
+        <div class="hero-btns">
+          <a href="#tentang" class="btn btn-primary"><i class="fas fa-info-circle"></i> Tentang Kami</a>
+          <a href="#keanggotaan" class="btn btn-outline"><i class="fas fa-user-plus"></i> Menjadi Anggota</a>
+        </div>
+      </div>
+      <div class="hero-visual animate-up delay-2">
+        <div class="hero-card-stack">
+          <div class="hc hc-1"><i class="fas fa-piggy-bank"></i><span>Simpanan Aman</span></div>
+          <div class="hc hc-2"><i class="fas fa-handshake"></i><span>Gotong Royong</span></div>
+          <div class="hc hc-3"><i class="fas fa-chart-line"></i><span>Tumbuh Bersama</span></div>
+        </div>
       </div>
     </div>
-    <div class="hero-scroll-indicator">
-      <span></span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TRUST / STATS
-  ============================================================ -->
-  <section class="trust" id="trust">
-    <div class="container">
-      <div class="trust-grid">
-        <div class="trust-item reveal">
-          <span class="trust-num" data-target="10000">0</span><span class="trust-plus">+</span>
-          <p>Pelanggan Puas</p>
+    <!-- Stat Bar -->
+    <div class="stat-bar">
+      <div class="container stat-grid">
+        <div class="stat-item">
+          <span class="stat-num" data-target="228">0</span><span>+</span>
+          <p>Anggota Aktif</p>
         </div>
-        <div class="trust-item reveal reveal-delay-1">
-          <span class="trust-num" data-target="4.9" data-decimal="1">0</span><span class="trust-plus">/5</span>
-          <p>Rating Pelanggan</p>
+        <div class="stat-item">
+          <span class="stat-num" data-target="2003">0</span>
+          <p>Tahun Berdiri</p>
         </div>
-        <div class="trust-item reveal reveal-delay-2">
-          <span class="trust-num" data-target="100">0</span><span class="trust-plus">%</span>
-          <p>Produk Berkualitas</p>
+        <div class="stat-item">
+          <span>Rp30 Jt</span>
+          <p>Maks. Pinjaman</p>
         </div>
-        <div class="trust-item reveal reveal-delay-3">
-          <span class="trust-text">Seluruh Indonesia</span>
-          <p>Jangkauan Pengiriman</p>
+        <div class="stat-item">
+          <span>2%</span>
+          <p>Bunga Menurun</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       FEATURES
-  ============================================================ -->
-  <section class="features" id="features">
+  <!-- TENTANG KAMI -->
+  <section id="tentang" class="section">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-eyebrow">Keunggulan Kami</span>
-        <h2 class="section-title">Dirancang untuk Standar Tertinggi</h2>
+        <span class="section-tag">Siapa Kami</span>
+        <h2>Tentang Koperasi Sarimanah</h2>
       </div>
-      <div class="features-grid">
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      <div class="tentang-grid">
+        <div class="tentang-text reveal">
+          <p>Koperasi Sarimanah berdiri pada tahun 2003 untuk melayani kebutuhan simpan pinjam masyarakat desa. Dalam perjalanannya koperasi menghadapi berbagai rintangan namun tetap beroperasi dan berkembang hingga saat ini.</p>
+          <p>Dengan semangat gotong royong dan kebersamaan, koperasi terus berupaya meningkatkan kesejahteraan anggota serta memberikan pelayanan yang aman dan terpercaya.</p>
+          <div class="info-chips">
+            <div class="chip"><i class="fas fa-calendar-alt"></i><div><small>Tahun Berdiri</small><strong>2003</strong></div></div>
+            <div class="chip"><i class="fas fa-file-alt"></i><div><small>Nomor Badan Hukum</small><strong>Dalam Proses Pembaruan</strong></div></div>
+            <div class="chip"><i class="fas fa-users"></i><div><small>Jumlah Anggota</small><strong>±228 Orang</strong></div></div>
           </div>
-          <h3>Material Premium</h3>
-          <p>Menggunakan bahan pilihan yang kuat, lentur, dan tahan terhadap penggunaan intensif sehari-hari.</p>
         </div>
-        <div class="feature-card reveal reveal-delay-1">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.499-12.99l.75-1.3m-6.751 16.57l.25-1.499m3.751-15.07l.25-1.499"/></svg>
+        <div class="tentang-visual reveal delay-1">
+          <div class="visual-card">
+            <div class="vc-icon"><i class="fas fa-shield-alt"></i></div>
+            <h4>Aman & Terpercaya</h4>
+            <p>Diawasi oleh pengawas internal dan dikelola secara transparan.</p>
           </div>
-          <h3>Desain Elegan</h3>
-          <p>Tampilan modern dengan proporsi sempurna yang cocok untuk setiap kesempatan, formal maupun kasual.</p>
-        </div>
-        <div class="feature-card reveal reveal-delay-2">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+          <div class="visual-card">
+            <div class="vc-icon green"><i class="fas fa-leaf"></i></div>
+            <h4>Berkembang Bersama</h4>
+            <p>Lebih dari 20 tahun melayani anggota dengan penuh dedikasi.</p>
           </div>
-          <h3>Ringkas & Fungsional</h3>
-          <p>Desain tipis dan kompak tanpa mengorbankan kapasitas — semua yang Anda butuhkan, tidak lebih.</p>
-        </div>
-        <div class="feature-card reveal reveal-delay-3">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
-          </div>
-          <h3>Pengiriman Aman</h3>
-          <p>Dikemas dengan cermat dan dikirim melalui platform marketplace terpercaya ke seluruh Indonesia.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       COLLECTION
-  ============================================================ -->
-  <section class="collection" id="collection">
+  <!-- VISI MISI -->
+  <section id="visi-misi" class="section bg-soft">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-eyebrow">Koleksi Kami</span>
-        <h2 class="section-title">Temukan Pilihan Terbaik Anda</h2>
+        <span class="section-tag">Arah & Tujuan</span>
+        <h2>Visi, Misi & Nilai</h2>
       </div>
-      <div class="product-grid">
-
-        <article class="product-card reveal">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=600&q=80" alt="RAKSI Classic Wallet" loading="lazy" />
-            <div class="product-overlay">
-              <a href="https://shopee.co.id/" target="_blank" class="overlay-btn">Lihat Detail</a>
-            </div>
-          </div>
-          <div class="product-info">
-            <span class="product-category">Wallet</span>
-            <h3>RAKSI Classic Wallet</h3>
-            <p>Dompet bifold dengan desain abadi, ruang luas untuk kartu dan uang tunai.</p>
-            <span class="product-price">Rp 299.000</span>
-            <div class="product-actions">
-              <a href="https://shopee.co.id/" target="_blank" class="btn-shopee">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                Beli di Shopee
-              </a>
-              <a href="https://wa.me/6281234567890?text=Halo%20RAKSI%2C%20saya%20tertarik%20dengan%20RAKSI%20Classic%20Wallet" target="_blank" class="btn-wa">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal reveal-delay-1">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1592921870789-04563d55041c?auto=format&fit=crop&w=600&q=80" alt="RAKSI Executive Leather" loading="lazy" />
-            <div class="product-overlay">
-              <a href="https://shopee.co.id/" target="_blank" class="overlay-btn">Lihat Detail</a>
-            </div>
-          </div>
-          <div class="product-info">
-            <span class="product-category">Premium Leather</span>
-            <h3>RAKSI Executive Leather</h3>
-            <p>Kulit asli full-grain dengan finishing matte untuk kesan profesional eksklusif.</p>
-            <span class="product-price">Rp 449.000</span>
-            <div class="product-actions">
-              <a href="https://shopee.co.id/" target="_blank" class="btn-shopee">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                Beli di Shopee
-              </a>
-              <a href="https://wa.me/6281234567890?text=Halo%20RAKSI%2C%20saya%20tertarik%20dengan%20RAKSI%20Executive%20Leather" target="_blank" class="btn-wa">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal reveal-delay-2">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1612460627213-c2af5fcdd659?auto=format&fit=crop&w=600&q=80" alt="RAKSI Slim Card Holder" loading="lazy" />
-            <div class="product-overlay">
-              <a href="https://shopee.co.id/" target="_blank" class="overlay-btn">Lihat Detail</a>
-            </div>
-          </div>
-          <div class="product-info">
-            <span class="product-category">Card Holder</span>
-            <h3>RAKSI Slim Card Holder</h3>
-            <p>Tipis, ringan, dan elegan — untuk mereka yang mengutamakan kesederhanaan.</p>
-            <span class="product-price">Rp 199.000</span>
-            <div class="product-actions">
-              <a href="https://shopee.co.id/" target="_blank" class="btn-shopee">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                Beli di Shopee
-              </a>
-              <a href="https://wa.me/6281234567890?text=Halo%20RAKSI%2C%20saya%20tertarik%20dengan%20RAKSI%20Slim%20Card%20Holder" target="_blank" class="btn-wa">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1614179689702-355944cd0918?auto=format&fit=crop&w=600&q=80" alt="RAKSI Urban Wallet" loading="lazy" />
-            <div class="product-overlay">
-              <a href="https://shopee.co.id/" target="_blank" class="overlay-btn">Lihat Detail</a>
-            </div>
-          </div>
-          <div class="product-info">
-            <span class="product-category">Urban</span>
-            <h3>RAKSI Urban Wallet</h3>
-            <p>Gaya urban yang dinamis dengan daya tampung optimal untuk kehidupan kota.</p>
-            <span class="product-price">Rp 329.000</span>
-            <div class="product-actions">
-              <a href="https://shopee.co.id/" target="_blank" class="btn-shopee">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                Beli di Shopee
-              </a>
-              <a href="https://wa.me/6281234567890?text=Halo%20RAKSI%2C%20saya%20tertarik%20dengan%20RAKSI%20Urban%20Wallet" target="_blank" class="btn-wa">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal reveal-delay-1">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1608731267464-c0c889c2ff92?auto=format&fit=crop&w=600&q=80" alt="RAKSI Heritage Leather" loading="lazy" />
-            <div class="product-overlay">
-              <a href="https://shopee.co.id/" target="_blank" class="overlay-btn">Lihat Detail</a>
-            </div>
-          </div>
-          <div class="product-info">
-            <span class="product-category">Heritage</span>
-            <h3>RAKSI Heritage Leather</h3>
-            <p>Terinspirasi dari craft tradisional dengan sentuhan kontemporer yang refined.</p>
-            <span class="product-price">Rp 499.000</span>
-            <div class="product-actions">
-              <a href="https://shopee.co.id/" target="_blank" class="btn-shopee">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                Beli di Shopee
-              </a>
-              <a href="https://wa.me/6281234567890?text=Halo%20RAKSI%2C%20saya%20tertarik%20dengan%20RAKSI%20Heritage%20Leather" target="_blank" class="btn-wa">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal reveal-delay-2">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80" alt="RAKSI Travel Wallet" loading="lazy" />
-            <div class="product-overlay">
-              <a href="https://shopee.co.id/" target="_blank" class="overlay-btn">Lihat Detail</a>
-            </div>
-          </div>
-          <div class="product-info">
-            <span class="product-category">Travel</span>
-            <h3>RAKSI Travel Wallet</h3>
-            <p>Ruang ekstra untuk passport, boarding pass, dan dokumen perjalanan penting.</p>
-            <span class="product-price">Rp 379.000</span>
-            <div class="product-actions">
-              <a href="https://shopee.co.id/" target="_blank" class="btn-shopee">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                Beli di Shopee
-              </a>
-              <a href="https://wa.me/6281234567890?text=Halo%20RAKSI%2C%20saya%20tertarik%20dengan%20RAKSI%20Travel%20Wallet" target="_blank" class="btn-wa">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="RAKSI Business Edition" loading="lazy" />
-            <div class="product-overlay">
-              <a href="https://shopee.co.id/" target="_blank" class="overlay-btn">Lihat Detail</a>
-            </div>
-          </div>
-          <div class="product-info">
-            <span class="product-category">Business</span>
-            <h3>RAKSI Business Edition</h3>
-            <p>Pilihan tepat untuk profesional — tampil percaya diri di setiap meeting.</p>
-            <span class="product-price">Rp 429.000</span>
-            <div class="product-actions">
-              <a href="https://shopee.co.id/" target="_blank" class="btn-shopee">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                Beli di Shopee
-              </a>
-              <a href="https://wa.me/6281234567890?text=Halo%20RAKSI%2C%20saya%20tertarik%20dengan%20RAKSI%20Business%20Edition" target="_blank" class="btn-wa">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal reveal-delay-1">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1624913503273-5f9c4e980dba?auto=format&fit=crop&w=600&q=80" alt="RAKSI Minimal Series" loading="lazy" />
-            <div class="product-overlay">
-              <a href="https://shopee.co.id/" target="_blank" class="overlay-btn">Lihat Detail</a>
-            </div>
-          </div>
-          <div class="product-info">
-            <span class="product-category">Minimal</span>
-            <h3>RAKSI Minimal Series</h3>
-            <p>Less is more — kesempurnaan dalam bentuk paling murni dan sederhana.</p>
-            <span class="product-price">Rp 249.000</span>
-            <div class="product-actions">
-              <a href="https://shopee.co.id/" target="_blank" class="btn-shopee">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                Beli di Shopee
-              </a>
-              <a href="https://wa.me/6281234567890?text=Halo%20RAKSI%2C%20saya%20tertarik%20dengan%20RAKSI%20Minimal%20Series" target="_blank" class="btn-wa">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Chat WhatsApp
-              </a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       ABOUT
-  ============================================================ -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-img-col reveal">
-          <div class="about-img-main">
-            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80" alt="RAKSI lifestyle" loading="lazy" />
-          </div>
-          <div class="about-img-accent">
-            <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=400&q=80" alt="RAKSI detail" loading="lazy" />
-          </div>
+      <div class="vm-grid">
+        <div class="vm-card visi reveal">
+          <div class="vm-icon"><i class="fas fa-eye"></i></div>
+          <h3>Visi</h3>
+          <p>Menjadi koperasi yang mandiri, terpercaya, dan mampu meningkatkan kesejahteraan anggota serta masyarakat.</p>
         </div>
-        <div class="about-content reveal reveal-delay-1">
-          <span class="section-eyebrow">Tentang RAKSI</span>
-          <h2 class="section-title">Lebih dari Sekadar Dompet</h2>
-          <p>RAKSI lahir dari keyakinan bahwa dompet bukan hanya tempat menyimpan uang dan kartu, tetapi juga bagian dari identitas dan gaya hidup seseorang.</p>
-          <p>Dengan fokus pada kualitas, desain, dan fungsionalitas, setiap produk RAKSI dirancang untuk memberikan pengalaman penggunaan terbaik setiap hari.</p>
-          <div class="about-vals">
-            <div class="about-val">
-              <span>✦</span>
-              <p>Setiap jahitan adalah janji kualitas</p>
-            </div>
-            <div class="about-val">
-              <span>✦</span>
-              <p>Desain yang melampaui tren musiman</p>
-            </div>
-            <div class="about-val">
-              <span>✦</span>
-              <p>Material dipilih dengan standar ketat</p>
-            </div>
-          </div>
-          <a href="#collection" class="btn btn-primary">Jelajahi Koleksi</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       WHY CHOOSE
-  ============================================================ -->
-  <section class="why" id="why">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Mengapa RAKSI</span>
-        <h2 class="section-title">Standar yang Tidak Kami Kompromikan</h2>
-      </div>
-      <div class="why-grid">
-        <div class="why-item reveal"><span class="why-check">✓</span><p>Material Berkualitas Tinggi</p></div>
-        <div class="why-item reveal reveal-delay-1"><span class="why-check">✓</span><p>Jahitan Presisi & Rapi</p></div>
-        <div class="why-item reveal reveal-delay-2"><span class="why-check">✓</span><p>Desain Timeless & Elegan</p></div>
-        <div class="why-item reveal"><span class="why-check">✓</span><p>Ringan dan Praktis Dibawa</p></div>
-        <div class="why-item reveal reveal-delay-1"><span class="why-check">✓</span><p>Cocok untuk Aktivitas Harian</p></div>
-        <div class="why-item reveal reveal-delay-2"><span class="why-check">✓</span><p>Garansi Kepuasan Pelanggan</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TESTIMONIALS
-  ============================================================ -->
-  <section class="testimonials" id="reviews">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Testimoni</span>
-        <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
-      </div>
-      <div class="testimonial-slider">
-        <div class="testimonial-track" id="testimonialTrack">
-
-          <div class="testimonial-slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Kualitasnya jauh di atas harganya. Dompet RAKSI Classic sudah saya pakai 8 bulan dan masih terlihat baru. Sangat puas!"</blockquote>
-            <div class="testimonial-author">
-              <img src="https://i.pravatar.cc/60?img=11" alt="Rizki Firmansyah" loading="lazy" />
-              <div>
-                <strong>Rizki Firmansyah</strong>
-                <span>Jakarta</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Card holder yang paling tipis dan elegan yang pernah saya miliki. Cocok banget buat orang kantoran yang suka tampil simpel."</blockquote>
-            <div class="testimonial-author">
-              <img src="https://i.pravatar.cc/60?img=22" alt="Bagas Prasetyo" loading="lazy" />
-              <div>
-                <strong>Bagas Prasetyo</strong>
-                <span>Surabaya</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Packaging-nya premium banget, berasa beli produk branded internasional. Dompetnya sendiri juga luar biasa. Recommended 100%!"</blockquote>
-            <div class="testimonial-author">
-              <img src="https://i.pravatar.cc/60?img=33" alt="Daffa Ramadhani" loading="lazy" />
-              <div>
-                <strong>Daffa Ramadhani</strong>
-                <span>Bandung</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Sudah punya 3 produk RAKSI. Executive Leather jadi favorit saya untuk meeting klien. Kelihatan mahal dan profesional banget."</blockquote>
-            <div class="testimonial-author">
-              <img src="https://i.pravatar.cc/60?img=44" alt="Andi Kurniawan" loading="lazy" />
-              <div>
-                <strong>Andi Kurniawan</strong>
-                <span>Medan</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Harganya terjangkau tapi kualitasnya saingan sama brand impor. Jahitannya rapi, bahannya kuat. Ini baru brand lokal yang benar-benar berkualitas."</blockquote>
-            <div class="testimonial-author">
-              <img src="https://i.pravatar.cc/60?img=55" alt="Fajar Nugroho" loading="lazy" />
-              <div>
-                <strong>Fajar Nugroho</strong>
-                <span>Yogyakarta</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Travel wallet RAKSI sudah menemani perjalanan saya ke 5 negara. Awet, fungsional, dan tetap keren. Tidak perlu beli dompet lain lagi."</blockquote>
-            <div class="testimonial-author">
-              <img src="https://i.pravatar.cc/60?img=66" alt="Wahyu Santoso" loading="lazy" />
-              <div>
-                <strong>Wahyu Santoso</strong>
-                <span>Bali</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="testimonial-controls">
-          <button class="testimonial-btn" id="tPrev" aria-label="Previous">←</button>
-          <div class="testimonial-dots" id="testimonialDots"></div>
-          <button class="testimonial-btn" id="tNext" aria-label="Next">→</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       GALLERY
-  ============================================================ -->
-  <section class="gallery" id="gallery">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Galeri</span>
-        <h2 class="section-title">RAKSI dalam Gaya Hidup Anda</h2>
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-item gallery-item--tall reveal" data-src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=90">
-          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80" alt="RAKSI lifestyle 1" loading="lazy" />
-          <div class="gallery-overlay"><span>+</span></div>
-        </div>
-        <div class="gallery-item reveal reveal-delay-1" data-src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=90">
-          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="RAKSI lifestyle 2" loading="lazy" />
-          <div class="gallery-overlay"><span>+</span></div>
-        </div>
-        <div class="gallery-item reveal reveal-delay-2" data-src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=1200&q=90">
-          <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=600&q=80" alt="RAKSI lifestyle 3" loading="lazy" />
-          <div class="gallery-overlay"><span>+</span></div>
-        </div>
-        <div class="gallery-item gallery-item--wide reveal" data-src="https://images.unsplash.com/photo-1592921870789-04563d55041c?auto=format&fit=crop&w=1200&q=90">
-          <img src="https://images.unsplash.com/photo-1592921870789-04563d55041c?auto=format&fit=crop&w=600&q=80" alt="RAKSI lifestyle 4" loading="lazy" />
-          <div class="gallery-overlay"><span>+</span></div>
-        </div>
-        <div class="gallery-item reveal reveal-delay-1" data-src="https://images.unsplash.com/photo-1612460627213-c2af5fcdd659?auto=format&fit=crop&w=1200&q=90">
-          <img src="https://images.unsplash.com/photo-1612460627213-c2af5fcdd659?auto=format&fit=crop&w=600&q=80" alt="RAKSI lifestyle 5" loading="lazy" />
-          <div class="gallery-overlay"><span>+</span></div>
-        </div>
-        <div class="gallery-item reveal reveal-delay-2" data-src="https://images.unsplash.com/photo-1624913503273-5f9c4e980dba?auto=format&fit=crop&w=1200&q=90">
-          <img src="https://images.unsplash.com/photo-1624913503273-5f9c4e980dba?auto=format&fit=crop&w=600&q=80" alt="RAKSI lifestyle 6" loading="lazy" />
-          <div class="gallery-overlay"><span>+</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
-    <img src="" alt="Gallery lightbox" id="lightboxImg" />
-  </div>
-
-  <!-- ============================================================
-       FAQ
-  ============================================================ -->
-  <section class="faq" id="faq">
-    <div class="container faq-inner">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">FAQ</span>
-        <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
-      </div>
-      <div class="faq-list">
-
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Apakah produk RAKSI original?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16m8-8H4"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Ya, 100% original. Semua produk RAKSI diproduksi langsung oleh tim kami menggunakan material pilihan berkualitas tinggi. Setiap produk disertai kartu garansi resmi RAKSI.</p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Bagaimana cara membeli produk RAKSI?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16m8-8H4"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Anda dapat membeli melalui dua cara: (1) Klik tombol "Beli di Shopee" untuk berbelanja melalui platform Shopee dengan berbagai pilihan pembayaran, atau (2) Hubungi kami via WhatsApp untuk pemesanan langsung dan konsultasi produk.</p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Apakah bisa COD (bayar di tempat)?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16m8-8H4"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Untuk pembelian via Shopee, COD tersedia di beberapa area tergantung layanan jasa pengiriman yang mendukung COD. Silakan cek ketersediaan COD langsung di aplikasi Shopee saat checkout.</p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Berapa lama estimasi pengiriman?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16m8-8H4"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Estimasi pengiriman bervariasi tergantung lokasi tujuan: Jawa 1–3 hari kerja, Luar Jawa 3–7 hari kerja. Kami bekerja sama dengan jasa pengiriman terpercaya seperti JNE, J&T, dan SiCepat.</p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Bagaimana cara menghubungi admin RAKSI?</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16m8-8H4"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Anda dapat menghubungi kami melalui WhatsApp di nomor <strong>+62 812-3456-7890</strong> (aktif Senin–Sabtu, 08.00–20.00 WIB), atau melalui DM Instagram @raksi.id. Tim kami siap membantu dalam waktu singkat.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CTA SECTION
-  ============================================================ -->
-  <section class="cta-section">
-    <div class="cta-bg">
-      <img src="https://images.unsplash.com/photo-1614179689702-355944cd0918?auto=format&fit=crop&w=1920&q=80" alt="CTA background" loading="lazy" />
-      <div class="cta-overlay"></div>
-    </div>
-    <div class="container cta-content reveal">
-      <span class="section-eyebrow cta-eyebrow">Mulai Sekarang</span>
-      <h2 class="cta-title">Temukan Dompet yang Sesuai dengan Karakter Anda</h2>
-      <p>Ribuan pelanggan telah mempercayai kualitas produk RAKSI.</p>
-      <div class="cta-actions">
-        <a href="https://shopee.co.id/" target="_blank" class="btn btn-white">Belanja di Shopee</a>
-        <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline-white">Hubungi via WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CONTACT
-  ============================================================ -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Kontak</span>
-        <h2 class="section-title">Hubungi Kami</h2>
-      </div>
-      <div class="contact-grid">
-        <a href="https://wa.me/6281234567890" target="_blank" class="contact-card reveal">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </div>
-          <h3>WhatsApp</h3>
-          <p>+62 812-3456-7890</p>
-          <span>Senin–Sabtu, 08.00–20.00</span>
-        </a>
-        <a href="https://instagram.com/raksi.id" target="_blank" class="contact-card reveal reveal-delay-1">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </div>
-          <h3>Instagram</h3>
-          <p>@raksi.id</p>
-          <span>Follow untuk update terbaru</span>
-        </a>
-        <a href="mailto:hello@raksi.id" class="contact-card reveal reveal-delay-2">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-          </div>
-          <h3>Email</h3>
-          <p>hello@raksi.id</p>
-          <span>Respon dalam 1×24 jam</span>
-        </a>
-        <div class="contact-card reveal reveal-delay-3">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-          </div>
-          <h3>Alamat</h3>
-          <p>Bandung, Jawa Barat</p>
-          <span>Indonesia</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#home" class="footer-logo">RAKSI</a>
-          <p>Crafted for Everyday Excellence. Dompet premium Indonesia untuk gaya hidup modern Anda.</p>
-          <div class="footer-social">
-            <a href="https://instagram.com/raksi.id" target="_blank" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-            <a href="https://shopee.co.id/" target="_blank" aria-label="Shopee">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-nav">
-          <h4>Menu</h4>
+        <div class="vm-card misi reveal delay-1">
+          <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+          <h3>Misi</h3>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#collection">Collection</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-nav">
-          <h4>Koleksi</h4>
-          <ul>
-            <li><a href="#collection">Classic Wallet</a></li>
-            <li><a href="#collection">Executive Leather</a></li>
-            <li><a href="#collection">Slim Card Holder</a></li>
-            <li><a href="#collection">Travel Wallet</a></li>
-            <li><a href="#collection">Business Edition</a></li>
-          </ul>
-        </div>
-        <div class="footer-nav">
-          <h4>Belanja</h4>
-          <ul>
-            <li><a href="https://shopee.co.id/" target="_blank">Shopee</a></li>
-            <li><a href="https://wa.me/6281234567890" target="_blank">WhatsApp</a></li>
-            <li><a href="mailto:hello@raksi.id">Email</a></li>
+            <li><i class="fas fa-check-circle"></i> Memberikan layanan simpan pinjam yang aman dan mudah.</li>
+            <li><i class="fas fa-check-circle"></i> Meningkatkan kesejahteraan anggota melalui pengelolaan yang profesional.</li>
+            <li><i class="fas fa-check-circle"></i> Mengembangkan budaya gotong royong dan kebersamaan.</li>
+            <li><i class="fas fa-check-circle"></i> Menjaga transparansi dan akuntabilitas pengelolaan koperasi.</li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 RAKSI. All Rights Reserved.</p>
-        <p>Crafted with care in Indonesia 🇮🇩</p>
+      <div class="nilai-grid">
+        <h3 class="nilai-title reveal">Nilai-Nilai Kami</h3>
+        <div class="nilai-cards">
+          <div class="nilai-card reveal"><i class="fas fa-star"></i><span>Amanah</span></div>
+          <div class="nilai-card reveal delay-1"><i class="fas fa-eye"></i><span>Transparan</span></div>
+          <div class="nilai-card reveal delay-2"><i class="fas fa-briefcase"></i><span>Profesional</span></div>
+          <div class="nilai-card reveal delay-3"><i class="fas fa-hands-helping"></i><span>Gotong Royong</span></div>
+          <div class="nilai-card reveal delay-4"><i class="fas fa-heart"></i><span>Kekeluargaan</span></div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- STRUKTUR ORGANISASI -->
+  <section id="struktur" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Tim Kami</span>
+        <h2>Struktur Organisasi</h2>
+      </div>
+      <!-- Ketua -->
+      <div class="org-level reveal">
+        <div class="org-card ketua">
+          <div class="org-avatar"><i class="fas fa-user-tie"></i></div>
+          <div class="org-badge">Ketua</div>
+          <h4>H. Encang, MM</h4>
+        </div>
+      </div>
+      <!-- Sekretaris & Bendahara -->
+      <div class="org-connector reveal"></div>
+      <div class="org-row reveal">
+        <div class="org-group">
+          <div class="org-label">Sekretaris</div>
+          <div class="org-pair">
+            <div class="org-card">
+              <div class="org-avatar sec"><i class="fas fa-user"></i></div>
+              <h4>Dewi Shinta</h4>
+            </div>
+            <div class="org-card">
+              <div class="org-avatar sec"><i class="fas fa-user"></i></div>
+              <h4>Iis Juarsih</h4>
+            </div>
+          </div>
+        </div>
+        <div class="org-group">
+          <div class="org-label">Bendahara</div>
+          <div class="org-pair">
+            <div class="org-card">
+              <div class="org-avatar ben"><i class="fas fa-user"></i></div>
+              <h4>Ai Ani Royani</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pengawas -->
+      <div class="org-connector reveal"></div>
+      <div class="org-row reveal">
+        <div class="org-group full">
+          <div class="org-label">Pengawas</div>
+          <div class="org-pair">
+            <div class="org-card">
+              <div class="org-avatar pen"><i class="fas fa-user-shield"></i></div>
+              <h4>Sopandi</h4>
+            </div>
+            <div class="org-card">
+              <div class="org-avatar pen"><i class="fas fa-user-shield"></i></div>
+              <h4>Sani Muslih Fauzi</h4>
+            </div>
+            <div class="org-card">
+              <div class="org-avatar pen"><i class="fas fa-user-shield"></i></div>
+              <h4>Jajang Jaelani</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUK DAN LAYANAN -->
+  <section id="layanan" class="section bg-soft">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Yang Kami Tawarkan</span>
+        <h2>Produk & Layanan</h2>
+      </div>
+      <div class="layanan-grid">
+        <div class="layanan-card reveal">
+          <div class="lc-icon"><i class="fas fa-hand-holding-usd"></i></div>
+          <h3>Simpanan Pokok</h3>
+          <p>Dibayarkan satu kali saat menjadi anggota koperasi.</p>
+          <div class="lc-badge">Rp100.000</div>
+        </div>
+        <div class="layanan-card reveal delay-1">
+          <div class="lc-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Simpanan Wajib</h3>
+          <p>Dibayarkan setiap bulan oleh seluruh anggota koperasi.</p>
+          <div class="lc-badge process">Dalam Proses Pembaruan</div>
+        </div>
+        <div class="layanan-card reveal delay-2">
+          <div class="lc-icon"><i class="fas fa-piggy-bank"></i></div>
+          <h3>Simpanan Manasuka</h3>
+          <p>Simpanan sukarela yang dapat disetor dan diambil sesuai kebutuhan anggota kapan saja.</p>
+        </div>
+        <div class="layanan-card reveal delay-3">
+          <div class="lc-icon"><i class="fas fa-money-bill-wave"></i></div>
+          <h3>Pinjaman Anggota</h3>
+          <p>Pinjaman untuk memenuhi kebutuhan anggota dengan syarat mudah.</p>
+          <div class="lc-info">
+            <span><i class="fas fa-arrow-up"></i> Maks. Rp30.000.000</span>
+            <span><i class="fas fa-percent"></i> Bunga 2% Menurun</span>
+          </div>
+        </div>
+        <div class="layanan-card reveal delay-4">
+          <div class="lc-icon"><i class="fas fa-receipt"></i></div>
+          <h3>Angsuran Pinjaman</h3>
+          <p>Pembayaran cicilan pinjaman dilakukan setiap bulan sesuai kesepakatan.</p>
+        </div>
+      </div>
+      <div class="layanan-cta reveal">
+        <a href="#kontak" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Ajukan Informasi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEANGGOTAAN -->
+  <section id="keanggotaan" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Bergabung Bersama Kami</span>
+        <h2>Menjadi Anggota Koperasi</h2>
+      </div>
+      <div class="member-info reveal">
+        <p>Terbuka untuk warga desa dan anggota lama yang telah pindah ke luar daerah. Daftarkan diri Anda dan rasakan manfaat menjadi bagian dari keluarga besar Koperasi Sarimanah.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="fas fa-info-circle"></i></div>
+          <h4>Pelajari Syarat</h4>
+          <p>Syarat keanggotaan: <span class="tag-process">Dalam Proses Pembaruan</span></p>
+        </div>
+        <div class="step-arrow reveal"><i class="fas fa-chevron-right"></i></div>
+        <div class="step-card reveal delay-1">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="fas fa-folder-open"></i></div>
+          <h4>Siapkan Dokumen</h4>
+          <p>Dokumen persyaratan: <span class="tag-process">Dalam Proses Pembaruan</span></p>
+        </div>
+        <div class="step-arrow reveal delay-1"><i class="fas fa-chevron-right"></i></div>
+        <div class="step-card reveal delay-2">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="fas fa-file-signature"></i></div>
+          <h4>Daftar & Bayar</h4>
+          <p>Bayar Simpanan Pokok <strong>Rp100.000</strong> dan Simpanan Wajib: <span class="tag-process">Dalam Proses Pembaruan</span></p>
+        </div>
+        <div class="step-arrow reveal delay-2"><i class="fas fa-chevron-right"></i></div>
+        <div class="step-card reveal delay-3">
+          <div class="step-num">04</div>
+          <div class="step-icon"><i class="fas fa-id-card"></i></div>
+          <h4>Resmi Menjadi Anggota</h4>
+          <p>Nikmati seluruh layanan Koperasi Sarimanah sebagai anggota resmi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPARANSI -->
+  <section id="transparansi" class="section bg-soft">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Akuntabilitas</span>
+        <h2>Transparansi & Pengawasan</h2>
+      </div>
+      <div class="trans-grid">
+        <div class="trans-card reveal">
+          <div class="trans-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>Laporan Keuangan</h3>
+          <p>Laporan keuangan diperiksa dan diaudit setiap akhir tahun oleh pengawas koperasi.</p>
+        </div>
+        <div class="trans-card reveal delay-1">
+          <div class="trans-icon"><i class="fas fa-user-shield"></i></div>
+          <h3>3 Pengawas Aktif</h3>
+          <p>Koperasi diawasi oleh 3 orang pengawas yang ditunjuk dalam rapat anggota.</p>
+        </div>
+        <div class="trans-card reveal delay-2">
+          <div class="trans-icon"><i class="fas fa-balance-scale"></i></div>
+          <h3>Akuntabel</h3>
+          <p>Seluruh pengelolaan dilakukan secara transparan dan dapat dipertanggungjawabkan kepada anggota.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KALKULATOR PINJAMAN -->
+  <section id="pinjaman" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Simulasi</span>
+        <h2>Kalkulator Pinjaman</h2>
+        <p class="section-desc">Hitung estimasi cicilan pinjaman Anda secara real-time dengan bunga 2% menurun.</p>
+      </div>
+      <div class="kalkulator-wrap reveal">
+        <div class="kalkulator-form">
+          <div class="form-group">
+            <label><i class="fas fa-money-bill"></i> Nominal Pinjaman</label>
+            <div class="input-group">
+              <span class="input-prefix">Rp</span>
+              <input type="number" id="nominalPinjaman" placeholder="Contoh: 10000000" min="0" max="30000000" />
+            </div>
+            <input type="range" id="sliderNominal" min="1000000" max="30000000" step="500000" value="5000000" />
+            <div class="slider-labels"><span>Rp1 Jt</span><span>Rp30 Jt</span></div>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-clock"></i> Lama Angsuran</label>
+            <div class="input-group">
+              <input type="number" id="lamaAngsuran" placeholder="Jumlah bulan" min="1" max="36" />
+              <span class="input-suffix">Bulan</span>
+            </div>
+            <input type="range" id="sliderAngsuran" min="1" max="36" step="1" value="12" />
+            <div class="slider-labels"><span>1 Bln</span><span>36 Bln</span></div>
+          </div>
+        </div>
+        <div class="kalkulator-result" id="kalkulatorResult">
+          <div class="result-header"><i class="fas fa-calculator"></i> Hasil Simulasi</div>
+          <div class="result-items">
+            <div class="result-row">
+              <span>Pinjaman Pokok</span>
+              <strong id="resPinjaman">Rp0</strong>
+            </div>
+            <div class="result-row">
+              <span>Cicilan Bulan Pertama</span>
+              <strong id="resCicilan1">Rp0</strong>
+            </div>
+            <div class="result-row">
+              <span>Cicilan Bulan Terakhir</span>
+              <strong id="resCicilanN">Rp0</strong>
+            </div>
+            <div class="result-row total">
+              <span>Total Pembayaran</span>
+              <strong id="resTotal">Rp0</strong>
+            </div>
+          </div>
+          <p class="result-note">* Simulasi ini bersifat estimasi. Bunga 2% per bulan menurun dari sisa pokok.</p>
+          <a href="#kontak" class="btn btn-primary full-btn"><i class="fas fa-paper-plane"></i> Ajukan Pinjaman</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section bg-soft">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Pertanyaan Umum</span>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q"><span>Siapa yang bisa menjadi anggota?</span><i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>Keanggotaan terbuka untuk warga desa dan anggota lama yang telah pindah ke luar daerah. Selama masih ingin berpartisipasi dalam koperasi, Anda dapat tetap menjadi anggota.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Berapa simpanan pokok yang harus dibayar?</span><i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>Simpanan pokok sebesar <strong>Rp100.000</strong> dibayarkan satu kali saat pertama kali mendaftar menjadi anggota koperasi.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Berapa maksimal pinjaman yang bisa diajukan?</span><i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>Anggota dapat mengajukan pinjaman hingga maksimal <strong>Rp30.000.000</strong> dengan bunga <strong>2% per bulan menurun</strong> dari sisa pokok pinjaman.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Bagaimana sistem penagihan angsuran?</span><i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>Pembayaran angsuran dilakukan setiap bulan sesuai dengan kesepakatan yang telah ditetapkan saat pengajuan pinjaman disetujui.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Siapa yang mengawasi koperasi?</span><i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>Koperasi Sarimanah diawasi oleh <strong>3 orang pengawas koperasi</strong> yaitu Sopandi, Sani Muslih Fauzi, dan Jajang Jaelani, yang ditunjuk melalui rapat anggota.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Hubungi Kami</span>
+        <h2>Informasi Kontak</h2>
+      </div>
+      <div class="kontak-grid">
+        <div class="kontak-info reveal">
+          <div class="kontak-item">
+            <div class="ki-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><h4>Alamat</h4><p>Dalam Proses Pembaruan</p></div>
+          </div>
+          <div class="kontak-item">
+            <div class="ki-icon"><i class="fab fa-whatsapp"></i></div>
+            <div><h4>WhatsApp</h4><p>Dalam Proses Pembaruan</p></div>
+          </div>
+          <div class="kontak-item">
+            <div class="ki-icon"><i class="fas fa-envelope"></i></div>
+            <div><h4>Email</h4><p>Dalam Proses Pembaruan</p></div>
+          </div>
+          <div class="kontak-item">
+            <div class="ki-icon"><i class="fas fa-clock"></i></div>
+            <div><h4>Jam Operasional</h4><p>Dalam Proses Pembaruan</p></div>
+          </div>
+          <!-- Google Maps Embed -->
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.5!2d107.9410809!3d-7.2019782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68b1785a9fb085%3A0x499ca807cab736b7!2sKoperasi%20Warga%20Desa%20Sarimanah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+              width="100%"
+              height="250"
+              style="border:0; border-radius: 12px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+        <div class="kontak-form reveal delay-1">
+          <h3>Kirim Pesan</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label>Nama Lengkap</label>
+              <input type="text" id="fNama" placeholder="Masukkan nama Anda" required />
+            </div>
+            <div class="form-group">
+              <label>Nomor WhatsApp</label>
+              <input type="tel" id="fWa" placeholder="Contoh: 081234567890" required />
+            </div>
+            <div class="form-group">
+              <label>Pesan</label>
+              <textarea id="fPesan" rows="4" placeholder="Tulis pesan Anda..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-btn"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><i class="fas fa-handshake"></i> Koperasi <strong>Sarimanah</strong></div>
+        <p>Bersama Membangun Kesejahteraan Anggota dan Masyarakat sejak 2003.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigasi Cepat</h4>
+        <ul>
+          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#visi-misi">Visi & Misi</a></li>
+          <li><a href="#struktur">Struktur Organisasi</a></li>
+          <li><a href="#layanan">Produk & Layanan</a></li>
+          <li><a href="#keanggotaan">Keanggotaan</a></li>
+          <li><a href="#pinjaman">Kalkulator Pinjaman</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Kontak</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Dalam Proses Pembaruan</p>
+        <p><i class="fab fa-whatsapp"></i> Dalam Proses Pembaruan</p>
+        <p><i class="fas fa-envelope"></i> Dalam Proses Pembaruan</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Koperasi Sarimanah. Berdiri sejak 2003. Semua hak dilindungi.</p>
     </div>
   </footer>
 
-  <!-- BACK TO TOP -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <!-- Scroll to Top -->
+  <button id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
   <script src="script.js"></script>
 </body>
