@@ -1,358 +1,275 @@
-/* ============================================================
-   RAKSI — Premium Wallet Brand
-   script.js — Production Ready Vanilla JS
-   ============================================================ */
+/* ===== KOPERASI SARIMANAH - script.js ===== */
 
-'use strict';
-
-/* ────────────────────────────────────────────────
-   DOM READY
-──────────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
-  initHamburger();
-  initSmoothScroll();
-  initScrollReveal();
-  initCounterAnimation();
-  initTestimonialSlider();
-  initFAQAccordion();
-  initGalleryLightbox();
-  initBackToTop();
-  initActiveNavHighlight();
-  initLazyLoading();
+// ── Loading Screen ──────────────────────────────────────────────
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  setTimeout(() => {
+    loader.classList.add('hide');
+    document.body.classList.remove('loading');
+    // Trigger hero animations after load
+    document.querySelectorAll('.animate-up').forEach(el => {
+      el.style.opacity = '1';
+    });
+  }, 1600);
 });
 
-/* ────────────────────────────────────────────────
-   1. STICKY NAVBAR
-──────────────────────────────────────────────── */
-function initNavbar() {
-  const navbar = document.getElementById('navbar');
-  if (!navbar) return;
+// ── Navbar Scroll Behavior ──────────────────────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+  document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+});
 
-  const update = () => {
-    if (window.scrollY > 60) {
-      navbar.classList.add('solid');
-      navbar.classList.remove('transparent');
-    } else {
-      navbar.classList.remove('solid');
-      navbar.classList.add('transparent');
-    }
-  };
+// ── Hamburger Menu ──────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
 
-  navbar.classList.add('transparent');
-  update();
-  window.addEventListener('scroll', update, { passive: true });
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+
+// Close menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
+
+// ── Dark Mode Toggle ────────────────────────────────────────────
+const darkToggle = document.getElementById('darkModeToggle');
+const darkIcon = darkToggle.querySelector('i');
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') applyDark();
+
+function applyDark() {
+  document.body.classList.add('dark');
+  darkIcon.classList.replace('fa-moon', 'fa-sun');
+}
+function removeDark() {
+  document.body.classList.remove('dark');
+  darkIcon.classList.replace('fa-sun', 'fa-moon');
 }
 
-/* ────────────────────────────────────────────────
-   2. MOBILE HAMBURGER MENU
-──────────────────────────────────────────────── */
-function initHamburger() {
-  const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('navMenu');
-  if (!hamburger || !navMenu) return;
+darkToggle.addEventListener('click', () => {
+  if (document.body.classList.contains('dark')) {
+    removeDark();
+    localStorage.setItem('theme', 'light');
+  } else {
+    applyDark();
+    localStorage.setItem('theme', 'dark');
+  }
+});
 
-  const toggle = () => {
-    const isOpen = navMenu.classList.toggle('open');
-    hamburger.classList.toggle('active', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    hamburger.setAttribute('aria-expanded', isOpen);
-  };
+// ── Scroll to Top ───────────────────────────────────────────────
+document.getElementById('scrollTop').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-  const close = () => {
-    navMenu.classList.remove('open');
-    hamburger.classList.remove('active');
-    document.body.style.overflow = '';
-    hamburger.setAttribute('aria-expanded', 'false');
-  };
+// ── Copyright Year ──────────────────────────────────────────────
+document.getElementById('year').textContent = new Date().getFullYear();
 
-  hamburger.addEventListener('click', toggle);
-
-  // Close on nav-link click
-  navMenu.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
-    link.addEventListener('click', close);
-  });
-
-  // Close on outside click
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-      close();
-    }
-  });
-
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') close();
-  });
+// ── Counter Animation ───────────────────────────────────────────
+function animateCounter(el, target, duration = 2000) {
+  let start = 0;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) { el.textContent = target.toLocaleString('id-ID'); clearInterval(timer); }
+    else el.textContent = Math.floor(start).toLocaleString('id-ID');
+  }, 16);
 }
 
-/* ────────────────────────────────────────────────
-   3. SMOOTH SCROLL
-──────────────────────────────────────────────── */
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (!target) return;
-      e.preventDefault();
-      const navH = document.getElementById('navbar')?.offsetHeight || 70;
-      const top  = target.getBoundingClientRect().top + window.scrollY - navH;
-      window.scrollTo({ top, behavior: 'smooth' });
-    });
+let countersStarted = false;
+function startCounters() {
+  if (countersStarted) return;
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+    animateCounter(el, parseInt(el.dataset.target));
   });
+  countersStarted = true;
 }
 
-/* ────────────────────────────────────────────────
-   4. SCROLL REVEAL
-──────────────────────────────────────────────── */
-function initScrollReveal() {
-  const elements = document.querySelectorAll('.reveal');
-  if (!elements.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  elements.forEach(el => observer.observe(el));
-}
-
-/* ────────────────────────────────────────────────
-   5. COUNTER ANIMATION
-──────────────────────────────────────────────── */
-function initCounterAnimation() {
-  const counters = document.querySelectorAll('.trust-num[data-target]');
-  if (!counters.length) return;
-
-  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-
-  const animateCounter = (el) => {
-    const target  = parseFloat(el.dataset.target);
-    const decimal = parseInt(el.dataset.decimal || '0', 10);
-    const duration = 1800;
-    let start = null;
-
-    const step = (timestamp) => {
-      if (!start) start = timestamp;
-      const elapsed  = timestamp - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased    = easeOut(progress);
-      const current  = target * eased;
-      el.textContent = decimal > 0 ? current.toFixed(decimal) : Math.floor(current).toLocaleString('id-ID');
-      if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = decimal > 0 ? target.toFixed(decimal) : target.toLocaleString('id-ID');
-    };
-
-    requestAnimationFrame(step);
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(el => observer.observe(el));
-}
-
-/* ────────────────────────────────────────────────
-   6. TESTIMONIAL SLIDER
-──────────────────────────────────────────────── */
-function initTestimonialSlider() {
-  const track  = document.getElementById('testimonialTrack');
-  const prev   = document.getElementById('tPrev');
-  const next   = document.getElementById('tNext');
-  const dotsWrap = document.getElementById('testimonialDots');
-  if (!track) return;
-
-  const slides = track.querySelectorAll('.testimonial-slide');
-  const total  = slides.length;
-  let current  = 0;
-  let autoPlay = null;
-
-  // Build dots
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Slide ${i + 1}`);
-    dot.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(dot);
-  });
-
-  const dots = dotsWrap.querySelectorAll('.dot');
-
-  const goTo = (index) => {
-    current = (index + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('active', i === current));
-  };
-
-  prev && prev.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
-  next && next.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
-
-  const startAuto = () => {
-    autoPlay = setInterval(() => goTo(current + 1), 4000);
-  };
-  const resetAuto = () => {
-    clearInterval(autoPlay);
-    startAuto();
-  };
-
-  startAuto();
-
-  // Pause on hover
-  track.parentElement.addEventListener('mouseenter', () => clearInterval(autoPlay));
-  track.parentElement.addEventListener('mouseleave', startAuto);
-
-  // Touch support
-  let startX = 0;
-  track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', (e) => {
-    const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) {
-      goTo(current + (diff > 0 ? 1 : -1));
-      resetAuto();
+// ── Intersection Observer – Reveal & Counters ───────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
     }
   });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Counter observer (fires when stat-bar is visible)
+const statBar = document.querySelector('.stat-bar');
+if (statBar) {
+  const counterObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) { startCounters(); counterObserver.disconnect(); }
+  }, { threshold: 0.3 });
+  counterObserver.observe(statBar);
 }
 
-/* ────────────────────────────────────────────────
-   7. FAQ ACCORDION
-──────────────────────────────────────────────── */
-function initFAQAccordion() {
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const btn = item.querySelector('.faq-question');
-    if (!btn) return;
-
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-
-      // Close all
-      document.querySelectorAll('.faq-item.open').forEach(openItem => {
-        openItem.classList.remove('open');
-        openItem.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
-      });
-
-      // Open clicked (if was closed)
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-}
-
-/* ────────────────────────────────────────────────
-   8. GALLERY LIGHTBOX
-──────────────────────────────────────────────── */
-function initGalleryLightbox() {
-  const lightbox    = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const closeBtn    = document.getElementById('lightboxClose');
-  if (!lightbox) return;
-
-  const open = (src, alt) => {
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || '';
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const close = () => {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-    setTimeout(() => { lightboxImg.src = ''; }, 350);
-  };
-
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const src = item.dataset.src || item.querySelector('img')?.src;
-      const alt = item.querySelector('img')?.alt;
-      if (src) open(src, alt);
-    });
-    item.setAttribute('tabindex', '0');
-    item.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        item.click();
-      }
-    });
-  });
-
-  closeBtn && closeBtn.addEventListener('click', close);
-  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
-}
-
-/* ────────────────────────────────────────────────
-   9. BACK TO TOP
-──────────────────────────────────────────────── */
-function initBackToTop() {
-  const btn = document.getElementById('backToTop');
-  if (!btn) return;
-
-  window.addEventListener('scroll', () => {
-    btn.classList.toggle('visible', window.scrollY > 500);
-  }, { passive: true });
-
+// ── FAQ Accordion ───────────────────────────────────────────────
+document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = btn.classList.contains('open');
 
-/* ────────────────────────────────────────────────
-   10. ACTIVE NAVIGATION HIGHLIGHT
-──────────────────────────────────────────────── */
-function initActiveNavHighlight() {
-  const sections = document.querySelectorAll('section[id]');
-  const links    = document.querySelectorAll('.nav-link');
-  if (!sections.length || !links.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        links.forEach(link => {
-          const href = link.getAttribute('href');
-          link.classList.toggle('active', href === `#${id}`);
-        });
-      }
+    // Close all
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      b.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
     });
-  }, {
-    rootMargin: '-40% 0px -55% 0px',
-    threshold: 0,
+
+    // Open current if it was closed
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  });
+});
+
+// ── Loan Calculator ─────────────────────────────────────────────
+const elNominal   = document.getElementById('nominalPinjaman');
+const elAngsuran  = document.getElementById('lamaAngsuran');
+const sliderN     = document.getElementById('sliderNominal');
+const sliderA     = document.getElementById('sliderAngsuran');
+
+// Sync inputs with sliders
+sliderN.addEventListener('input', () => { elNominal.value = sliderN.value; calculate(); });
+sliderA.addEventListener('input', () => { elAngsuran.value = sliderA.value; calculate(); });
+elNominal.addEventListener('input', () => {
+  const v = Math.min(Math.max(parseInt(elNominal.value) || 0, 0), 30000000);
+  sliderN.value = v; calculate();
+});
+elAngsuran.addEventListener('input', () => {
+  const v = Math.min(Math.max(parseInt(elAngsuran.value) || 1, 1), 36);
+  sliderA.value = v; calculate();
+});
+
+// Set defaults
+elNominal.value = 5000000;
+elAngsuran.value = 12;
+
+function formatRp(n) {
+  return 'Rp' + Math.round(n).toLocaleString('id-ID');
+}
+
+function calculate() {
+  const pokok  = parseFloat(elNominal.value)  || 0;
+  const bulan  = parseInt(elAngsuran.value)   || 0;
+  const rate   = 0.02; // 2% per bulan menurun
+
+  document.getElementById('resPinjaman').textContent = formatRp(pokok);
+
+  if (pokok <= 0 || bulan <= 0) {
+    document.getElementById('resCicilan1').textContent = 'Rp0';
+    document.getElementById('resCicilanN').textContent = 'Rp0';
+    document.getElementById('resTotal').textContent    = 'Rp0';
+    return;
+  }
+
+  const angsuranPokok = pokok / bulan;
+  let total = 0;
+  let cicilan1 = 0, cicilanN = 0;
+
+  for (let i = 1; i <= bulan; i++) {
+    const sisaPokok = pokok - angsuranPokok * (i - 1);
+    const bunga     = sisaPokok * rate;
+    const cicilan   = angsuranPokok + bunga;
+    total += cicilan;
+    if (i === 1)    cicilan1 = cicilan;
+    if (i === bulan) cicilanN = cicilan;
+  }
+
+  document.getElementById('resCicilan1').textContent = formatRp(cicilan1);
+  document.getElementById('resCicilanN').textContent = formatRp(cicilanN);
+  document.getElementById('resTotal').textContent    = formatRp(total);
+}
+
+calculate(); // initial render
+
+// ── Contact Form ────────────────────────────────────────────────
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const nama   = document.getElementById('fNama').value.trim();
+  const wa     = document.getElementById('fWa').value.trim();
+  const pesan  = document.getElementById('fPesan').value.trim();
+
+  if (!nama || !wa || !pesan) {
+    showToast('Mohon lengkapi semua kolom.', 'error'); return;
+  }
+  if (!/^[0-9+\s-]{8,15}$/.test(wa)) {
+    showToast('Nomor WhatsApp tidak valid.', 'error'); return;
+  }
+
+  // Compose WhatsApp message (fallback since no server)
+  const msg = encodeURIComponent(`Halo Koperasi Sarimanah,\n\nNama: ${nama}\nWA: ${wa}\n\nPesan:\n${pesan}`);
+  showToast('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
+  this.reset();
+});
+
+// ── Toast Notification ──────────────────────────────────────────
+function showToast(message, type = 'success') {
+  const existing = document.querySelector('.toast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.className = 'toast toast-' + type;
+  toast.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> ${message}`;
+
+  Object.assign(toast.style, {
+    position: 'fixed', bottom: '80px', right: '24px', zIndex: '9998',
+    background: type === 'success' ? '#16a34a' : '#dc2626',
+    color: 'white', padding: '14px 20px', borderRadius: '12px',
+    fontFamily: 'Poppins, sans-serif', fontSize: '0.875rem', fontWeight: '500',
+    boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+    display: 'flex', alignItems: 'center', gap: '10px',
+    animation: 'slideInRight 0.4s ease',
+    maxWidth: '320px'
   });
 
-  sections.forEach(section => observer.observe(section));
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 4000);
 }
 
-/* ────────────────────────────────────────────────
-   11. LAZY LOADING
-──────────────────────────────────────────────── */
-function initLazyLoading() {
-  // Native lazy loading is set in HTML (loading="lazy").
-  // Enhance with IntersectionObserver for older browsers.
-  if ('loading' in HTMLImageElement.prototype) return;
+// Add slideInRight keyframe dynamically
+const style = document.createElement('style');
+style.textContent = `@keyframes slideInRight {
+  from { transform: translateX(100px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}`;
+document.head.appendChild(style);
 
-  const lazyImgs = document.querySelectorAll('img[loading="lazy"]');
-  if (!lazyImgs.length) return;
+// ── Smooth Scroll for all anchor links ─────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const offset = 75;
+    window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+  });
+});
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        if (img.dataset.src) img.src = img.dataset.src;
-        observer.unobserve(img);
-      }
-    });
-  }, { rootMargin: '200px' });
+// ── Active nav link highlight on scroll ─────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
 
-  lazyImgs.forEach(img => observer.observe(img));
-}
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+  });
+  navAnchors.forEach(a => {
+    a.style.color = '';
+    a.style.background = '';
+    if (a.getAttribute('href') === '#' + current) {
+      a.style.color = 'var(--green)';
+      a.style.background = 'rgba(22,163,74,0.08)';
+    }
+  });
+});
